@@ -1,4 +1,4 @@
-// Å½¿å¹ı_Å« ¼ö ¸¸µé±â: https://programmers.co.kr/learn/courses/30/lessons/42883
+// íƒìš•ë²•_í° ìˆ˜ ë§Œë“¤ê¸°: https://programmers.co.kr/learn/courses/30/lessons/42883
 #include <string>
 #include <vector>
 using namespace std;
