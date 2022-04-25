@@ -22,14 +22,14 @@ int solution(string numbers) {
     int x = 0;
     int i;
     sort(numbers.begin(), numbers.end());
-    while (next_permutation(numbers.begin(), numbers.end()))
+    do
     {
         for (i = 1; i < numbers.size() + 1; i++)
         {
             x = stoi(numbers.substr(0, i));
             if (isPrime(x)) prime.insert(x);
         }
-    }
+    } while (next_permutation(numbers.begin(), numbers.end()));
 
     return prime.size();
 
