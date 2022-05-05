@@ -3,6 +3,7 @@
 #include <algorithm>
 using namespace std;
 
+ // 220319 풀이
 int solution(vector<int> pr, int location) {
     int answer = 1, i;
     vector<int> printer;
@@ -23,9 +24,35 @@ int solution(vector<int> pr, int location) {
     }
     return answer;
 }
-/*
-* 
-* [다른 사람 풀이]: Queue 사용
+
+
+//220506 풀이
+int solution(vector<int> pr, int location) {
+    int answer = 0; int p = 0;
+    vector<int> pointer = pr;
+    sort(pointer.begin(), pointer.end(), greater<int>());
+
+    while (true)
+    {
+        if (pr[p] != pointer[0])
+        {
+            p = p < pr.size() - 1 ? ++p : 0;
+            continue;
+        }
+
+        answer++;
+        if (p != location)
+        {
+            pointer.erase(pointer.begin());
+            p = p < pr.size() - 1 ? ++p : 0;
+        }
+        else return answer;
+    }
+}
+
+
+
+// [다른 사람 풀이]: Queue 사용
 #include <vector>
 #include <queue>
 #include <algorithm>
@@ -34,17 +61,17 @@ using namespace std;
 int solution(vector<int> priorities, int location) {
     queue<int> printer; vector<int> sorted; //printer: queue에 index 삽입. sorted: 정렬된 결과 저장용
     for(int i=0; i<priorities.size(); i++) printer.push(i);
-    
+
     while(!printer.empty()) {
         int now_index = printer.front();
         printer.pop();
-        if(priorities[now_index] != *max_element(priorities.begin(),priorities.end())) 
+        if(priorities[now_index] != *max_element(priorities.begin(),priorities.end()))
             printer.push(now_index); //아닌경우 push
         else {
             sorted.push_back(now_index); priorities[now_index] = 0; //맞는경우
         }
     }
-    for(int i=0; i<sorted.size(); i++) if(sorted[i] == location) return i+1; 
+    for(int i=0; i<sorted.size(); i++) if(sorted[i] == location) return i+1;
 }
 
-*/
+
