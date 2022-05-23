@@ -62,3 +62,10 @@ def solution(m, n, board):
         disappear_block = [[0 for _ in range(n)] for _ in range(m)]
 
     return cnt
+
+# 위 코드를 개선하는 방안 1.
+# disappear_block 배열 대신, 삭제될 블록들의 기준 블록 인덱스 리스트를 생성한다.
+# 코드를 개선하는 방안 2.
+# 보드를 재배열할 때, 행,열의 방향을 바꿔서 replace() 함수를 이용해볼 수 있다.
+# replace() 함수 내에서도 전체 탐색을 시행할테니, 시간복잡도에서 크게 차이는 없을 거 같다.
+# 그러나 코드가 조금 더 의미 명확해질 거 같다는 점에서 장점이 있는 거 같다.
