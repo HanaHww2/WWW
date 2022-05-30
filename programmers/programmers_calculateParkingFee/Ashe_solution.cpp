@@ -62,7 +62,7 @@ vector<int> solution(vector<int> fees, vector<string> records) {
             time += calcTime(times[times.size() - 1], "23:59");
         }
         if (time <= fees[0]) answer.push_back(fees[1]);
-        else answer.push_back(fees[1] + ceil((time - fees[0]) / fees[2]) * fees[3]);
+        else answer.push_back(fees[1] + ceil((double)(time - fees[0]) / fees[2]) * fees[3]);
     }
 
     return answer;
