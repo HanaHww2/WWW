@@ -10,7 +10,7 @@ using namespace std;
 * for(i = 0; i<course.size(); i++) for(j = 0; j< orders.size(); j++) 
        2번 이상 주문된 course[i]개수의 메뉴 조합을 모두 찾는다.
 * vector<Pair> ordered: 주문된 메뉴 course[i]개 조합 comb와 주문횟수 frequency의 배열
-* 1. 각 주문을 돌면서 course[i]만큼 order을 자른다X  -> string menu;
+* 1. 각 주문을 돌면서 Combination의 Vector를 만들어준다 -> MakeComb();
 *   1-1. 만약 ordered에 없으면: ordered.push_back(Pair(menu));
 *   1-2. 있으면: 해당 Pair를 찾아서 frequency++;
 * 2. ordered 에서 frequency가 가장 높은 Pair를 찾아 answer.push_back(comb); //여러 개일 수 있다
