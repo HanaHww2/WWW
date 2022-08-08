@@ -1,5 +1,6 @@
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        # 프림
         dic = {(x,y):float('inf') if i else 0 for i,(x,y) in enumerate(points)}
         # print(dic)
         result = 0 
