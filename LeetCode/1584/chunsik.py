@@ -5,7 +5,7 @@ class Solution:
         result = 0 
         while dic :
             x,y = min(dic,key = dic.get) 
-            # d의 value 값중에 작은 값 가진 키 찾기
+            # dic 의 value 값중에 가장 작은 값 가진 키 찾기
             # min(dic.keys(), key=lambda x : dic[x]) == min(dic,key = dic.get) 
             result += dic.pop((x,y))
             for a,b in dic : 
